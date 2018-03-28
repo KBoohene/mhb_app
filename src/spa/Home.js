@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   StyleSheet, Text, View, Button
 } from 'react-native';
-import db from '../api/db_functions'
+// import db from '../api/db_functions'
 
 class Home extends Component{
   
@@ -15,7 +15,7 @@ class Home extends Component{
   }
   static navigationOptions = { header: null }
   findHymn = () =>{
-    db.getHymn()
+    // db.getHymn()
   }
 
   render(){

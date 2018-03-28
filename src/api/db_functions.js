@@ -1,15 +1,16 @@
-const SQLite = require('react-native-sqlite-storage')
 
-const db = SQLite.openDatabase({name : "mhb_db", createFromLocation : "~/mhb.db"});
+
+const db = SQLite.openDatabase('mhb.db', '1.0', '', 1);
 
 
 const functions = {
   getHymn(){
-    db.transaction((tx) => {
-      tx.executeSql('CREATE TABLE IF NOT EXISTS category  (ID Integer PRIMARY KEY AUTOINCREMENT,NAME varchar(25))', [], (tx, results) => {
-          console.log(results)
-          
-        });
+    db.transaction(function (txn) {
+      txn.executeSql('SELECT * FROM `hymns`', [], function (tx, res) {
+        for (let i = 0; i < res.rows.length; ++i) {
+          console.log('item:', res.rows.item(i));
+        }
+      });
     });
   }
 
