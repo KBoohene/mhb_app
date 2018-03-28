@@ -15,7 +15,7 @@ class Home extends Component{
   }
   static navigationOptions = { header: null }
   findHymn = () =>{
-    // db.getHymn()
+    db.getHymn()
   }
 
   render(){
