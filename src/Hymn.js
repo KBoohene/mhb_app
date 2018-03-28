@@ -7,7 +7,7 @@ import {
 
 class Hymn extends Component{
 
-  
+  static navigationOptions = { header: null }
   render(){
     return(
       <View>
