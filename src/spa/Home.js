@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet, Text, View, Button
+import { Text, View, Button
 } from 'react-native';
-
-var SQLite = require('react-native-sqlite-storage');
-let db = SQLite.openDatabase({name: 'my.db'})
+import db from '../api/db_functions'
 
 class Home extends Component{
   
@@ -13,20 +10,12 @@ class Home extends Component{
     this.state = {
       lyrics: ''
 
-    };
-
-    db.transaction(function (txn) {
-      txn.executeSql('SELECT * FROM `users`', [], function (tx, res) {
-        for (let i = 0; i < res.rows.length; ++i) {
-          console.log('item:', res.rows.item(i));
-        }
-      });
-    });
+    };  
 
   }
   static navigationOptions = { header: null }
   findHymn = () =>{
-    // db.getHymn()
+    db.getHymn()
   }
 
   render(){
