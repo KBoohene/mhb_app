@@ -1,0 +1,3 @@
+rootProject.name = 'mhb_android'
+
+include ':app'
