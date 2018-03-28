@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {
   StyleSheet, Text, View, Button
 } from 'react-native';
-// import db from '../api/db_functions'
+
+var SQLite = require('react-native-sqlite-storage');
+let db = SQLite.openDatabase({name: 'my.db'})
 
 class Home extends Component{
   
@@ -10,7 +12,16 @@ class Home extends Component{
     super(props);
     this.state = {
       lyrics: ''
+
     };
+
+    db.transaction(function (txn) {
+      txn.executeSql('SELECT * FROM `users`', [], function (tx, res) {
+        for (let i = 0; i < res.rows.length; ++i) {
+          console.log('item:', res.rows.item(i));
+        }
+      });
+    });
 
   }
   static navigationOptions = { header: null }
