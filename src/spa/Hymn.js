@@ -24,10 +24,11 @@ class Hymn extends Component{
   static navigationOptions = { header: null }
 
   componentWillMount(){
-    // let { params } = this.props.navigation.state;
-    // let hymn_Number = params ? params.hymnNumber : null;
-    // let hymn_lyrics = params ? params.hymnText : null;
-    // this.setState({lyrics:hymn_lyrics})
+    let { params } = this.props.navigation.state;
+    let hymn_Number = params ? params.hymnNumber : null;
+    let hymn_lyrics = params ? params.hymnText : null;
+    this.setState({num:hymn_Number})
+    this.setState({lyrics:hymn_lyrics})
   }
   
   findHymn = () =>{
