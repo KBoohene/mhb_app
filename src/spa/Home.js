@@ -42,7 +42,6 @@ class Home extends Component{
             />
           <Button onClick={this.findHymn}>Search</Button>
         </View>     
-        <Text>{this.state.num}</Text>
       </View>
       )
   }
