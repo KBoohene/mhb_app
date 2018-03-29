@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View} from 'react-native';
+import { Text, View, StatusBar} from 'react-native';
 import Button from 'antd-mobile/lib/button';
 import SearchBar from 'react-native-search-box'
 import db from '../api/db_functions'
@@ -34,6 +34,7 @@ class Home extends Component{
   render(){
     return(
       <View>
+        <StatusBar hidden={true}/>
         <View></View>
         <View>
           <SearchBar 

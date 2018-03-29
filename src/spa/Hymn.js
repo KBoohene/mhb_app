@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
+  SearchBar,
   ScrollView
 } from 'react-native';
 import SearchBar from 'react-native-search-box'
@@ -50,6 +51,7 @@ class Hymn extends Component{
   render(){
     return(
       <View>
+        <SearchBar hidden={true}/>
         <View>
           <SearchBar 
             onChangeText={this.onChange}
