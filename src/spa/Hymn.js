@@ -6,6 +6,7 @@ import {
   ScrollView
 } from 'react-native';
 import SearchBar from 'antd-mobile/lib/search-bar';
+import db from '../api/db_functions'
 
 class Hymn extends Component{
   constructor(props) {
@@ -25,14 +26,36 @@ class Hymn extends Component{
     let hymn_lyrics = params ? params.hymnText : null;
     this.setState({lyrics:hymn_lyrics})
   }
+  
+  findHymn = () =>{
+    db.getHymn(this.state.num,(hymnText)=>{
+      this.setState({lyrics:hymnText})
+      
+      this.props.navigation.navigate('Hymns', {
+        hymnNumber: this.state.num,
+        hymnText: this.state.lyrics,
+      });
+    })
+  }
+
+  onChange= (value) => {
+    this.setState({ num: value });
+  };
 
   render(){
     return(
       <View>
         <View>
-          <SearchBar placeholder="Search" maxLength={8} />
+          <SearchBar 
+            onChange={this.onChange}
+            placeholder="Search" 
+            cancelText="Cancel"
+            onSubmit={this.findHymn} />
         </View>
         <ScrollView>
+          <Text>
+            {this.state.lyrics}
+          </Text>
         </ScrollView>
       </View>
       )

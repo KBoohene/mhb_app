@@ -30,6 +30,11 @@ class Home extends Component{
     this.setState({ num: value });
   };
 
+  onCancel = () => {
+    this.setState({ num: '' });
+    
+  };
+
   render(){
     return(
       <View>
@@ -37,8 +42,9 @@ class Home extends Component{
         <View>
           <SearchBar 
             onChange={this.onChange}
-            placeholder="Search" 
-            maxLength={8} />
+            placeholder="Search"
+            
+            cancelText="Cancel" />
           <Button onClick={this.findHymn}>Search</Button>
         </View>     
         <Text>{this.state.num}</Text>
