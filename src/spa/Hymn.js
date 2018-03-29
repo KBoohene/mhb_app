@@ -7,6 +7,7 @@ import {
   ScrollView
 } from 'react-native';
 import SearchBar from 'react-native-search-box'
+import Card from 'antd-mobile/lib/card'
 import db from '../api/db_functions'
 
 class Hymn extends Component{
@@ -23,10 +24,10 @@ class Hymn extends Component{
   static navigationOptions = { header: null }
 
   componentWillMount(){
-    let { params } = this.props.navigation.state;
-    let hymn_Number = params ? params.hymnNumber : null;
-    let hymn_lyrics = params ? params.hymnText : null;
-    this.setState({lyrics:hymn_lyrics})
+    // let { params } = this.props.navigation.state;
+    // let hymn_Number = params ? params.hymnNumber : null;
+    // let hymn_lyrics = params ? params.hymnText : null;
+    // this.setState({lyrics:hymn_lyrics})
   }
   
   findHymn = () =>{
@@ -61,9 +62,17 @@ class Hymn extends Component{
             onSearch={this.findHymn} />
         </View>
         <ScrollView>
-          <Text>
-            {this.state.lyrics}
-          </Text>
+          <Card>
+            <Card.Header 
+            title={"Hymn Number: "+this.state.num }
+            />
+            <Card.Body>
+              <Text>
+                {this.state.lyrics}
+              </Text>  
+            </Card.Body>
+          </Card>
+          
         </ScrollView>
       </View>
       )

@@ -40,8 +40,11 @@ class Home extends Component{
           <SearchBar 
             onChangeText={this.onChange}
             placeholder="Hymn"
-            backgroundColor = {"#363B3F"} 
+            backgroundColor = {"#303337"} 
+            onSearch={this.findHymn}
             />
+        </View>
+        <View style={styles.buttonContainer}>
           <Button 
             style={styles.buttonStyle}
             onClick={this.findHymn}
@@ -55,8 +58,13 @@ class Home extends Component{
 }
 
 const styles = StyleSheet.create({
+  buttonContainer:{
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   buttonStyle: {
     borderRadius:15,
+    height:35,
     borderColor:'#303337',
     width:200,
     backgroundColor:'#303337'

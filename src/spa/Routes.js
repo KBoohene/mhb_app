@@ -13,7 +13,7 @@ const Routes= StackNavigator(
     },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Hymns',
   }
 );
 export default Routes;
