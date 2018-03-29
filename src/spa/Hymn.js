@@ -67,7 +67,7 @@ class Hymn extends Component{
             title={"Hymn Number: "+this.state.num }
             />
             <Card.Body>
-              <Text>
+              <Text style={styles.hym_text}>
                 {this.state.lyrics}
               </Text>  
             </Card.Body>
@@ -78,5 +78,10 @@ class Hymn extends Component{
       )
   }
 }
+const styles = StyleSheet.create({
+  hym_text:{
+   fontSize:18
+  }
+});
 
 export default Hymn
