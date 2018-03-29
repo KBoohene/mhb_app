@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View} from 'react-native';
 import Button from 'antd-mobile/lib/button';
-import SearchBar from 'antd-mobile/lib/search-bar'
+import SearchBar from 'react-native-search-box'
 import db from '../api/db_functions'
 
 class Home extends Component{
@@ -30,10 +30,6 @@ class Home extends Component{
     this.setState({ num: value });
   };
 
-  onCancel = () => {
-    this.setState({ num: '' });
-    
-  };
 
   render(){
     return(
@@ -41,10 +37,9 @@ class Home extends Component{
         <View></View>
         <View>
           <SearchBar 
-            onChange={this.onChange}
-            placeholder="Search"
-            
-            cancelText="Cancel" />
+            onChangeText={this.onChange}
+            placeholder="Hymn"
+            />
           <Button onClick={this.findHymn}>Search</Button>
         </View>     
         <Text>{this.state.num}</Text>
