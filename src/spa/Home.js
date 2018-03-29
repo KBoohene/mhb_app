@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StatusBar} from 'react-native';
+import { Text, View, StatusBar, StyleSheet} from 'react-native';
 import Button from 'antd-mobile/lib/button';
 import SearchBar from 'react-native-search-box'
 import db from '../api/db_functions'
@@ -33,20 +33,39 @@ class Home extends Component{
 
   render(){
     return(
-      <View>
+      <View style={styles.screen}>
         <StatusBar hidden={true}/>
         <View></View>
         <View>
           <SearchBar 
             onChangeText={this.onChange}
             placeholder="Hymn"
+            backgroundColor = {"#363B3F"} 
             />
-          <Button onClick={this.findHymn}>Search</Button>
+          <Button 
+            style={styles.buttonStyle}
+            onClick={this.findHymn}
+          >
+            Search
+          </Button>
         </View>     
       </View>
       )
   }
 }
+
+const styles = StyleSheet.create({
+  buttonStyle: {
+    borderRadius:15,
+    borderColor:'#303337',
+    width:200,
+    backgroundColor:'#303337'
+  },
+  screen: {
+    backgroundColor:"#363B3F",
+    flex:1
+  }
+});
 
 
 export default Home;

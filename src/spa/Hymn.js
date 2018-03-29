@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  SearchBar,
+  StatusBar,
   ScrollView
 } from 'react-native';
 import SearchBar from 'react-native-search-box'
@@ -51,12 +51,13 @@ class Hymn extends Component{
   render(){
     return(
       <View>
-        <SearchBar hidden={true}/>
+        <StatusBar hidden={true}/>
         <View>
           <SearchBar 
             onChangeText={this.onChange}
             placeholder={this.state.place} 
             blurSubmit={true}
+            backgroundColor = {"#363B3F"}
             onSearch={this.findHymn} />
         </View>
         <ScrollView>
