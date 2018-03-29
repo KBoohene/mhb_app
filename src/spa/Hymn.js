@@ -57,7 +57,7 @@ class Hymn extends Component{
             onChangeText={this.onChange}
             placeholder={this.state.place} 
             blurSubmit={true}
-            backgroundColor = {"#363B3F"}
+            backgroundColor = {"#303337"}
             onSearch={this.findHymn} />
         </View>
         <ScrollView>
