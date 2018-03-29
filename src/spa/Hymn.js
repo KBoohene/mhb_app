@@ -26,7 +26,6 @@ class Hymn extends Component{
     let hymn_Number = params ? params.hymnNumber : null;
     let hymn_lyrics = params ? params.hymnText : null;
     this.setState({lyrics:hymn_lyrics})
-    this.setState({place:hymn_Number})
   }
   
   findHymn = () =>{
@@ -39,6 +38,14 @@ class Hymn extends Component{
   onChange= (value) => {
     this.setState({ num: value });
   };
+
+  onDelete=()=>{
+    this.setState({ place: 'Hymn' });
+  };
+
+  onCancel = () =>{
+    this.setState({place: 'Hymn'})
+  }
 
   render(){
     return(
