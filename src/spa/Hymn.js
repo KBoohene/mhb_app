@@ -80,7 +80,8 @@ class Hymn extends Component{
             backgroundColor = {"#303337"}
             onSearch={this.findHymn} />
         </View>
-        <ScrollView>
+        <ScrollView 
+          contentContainerStyle={styles.scroll_container}>
           <Card>
             <Card.Header 
             title={"Hymn Number: "+this.state.num }
@@ -101,6 +102,9 @@ class Hymn extends Component{
 const styles = StyleSheet.create({
   hym_text:{
    fontSize:18
+  },
+  scroll_container:{
+    flex:1
   }
 });
 
