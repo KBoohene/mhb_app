@@ -20,32 +20,50 @@ class Hymn extends Component{
     };  
 
   }
-
+  
+  //Hides screen navigation bar
   static navigationOptions = { header: null }
-
+  
+  /*
+  * Performed before a component is mounted 
+  * or page is loaded
+  */
   componentWillMount(){
+    // Retrieves values passed previous route
     let { params } = this.props.navigation.state;
     let hymn_Number = params ? params.hymnNumber : null;
     let hymn_lyrics = params ? params.hymnText : null;
+
+    // Values are assigned to state variables
     this.setState({num:hymn_Number})
     this.setState({lyrics:hymn_lyrics})
   }
   
+  //Calls the db function that searches for a hymn
   findHymn = () =>{
+     /**
+     * Calls database api to search for a hymn
+     * 
+     * @param {integer} this.state.num 
+     * @param {function} hymnText
+     */
     db.getHymn(this.state.num,(hymnText)=>{
       this.setState({lyrics:hymnText})
       
     })
   }
 
+  //Stores the change in text in the search bar
   onChange= (value) => {
     this.setState({ num: value });
   };
 
+  //Callback function after the search bar is closed
   onDelete=()=>{
     this.setState({ place: 'Hymn' });
   };
 
+  //Callback function after the search bar is cleared
   onCancel = () =>{
     this.setState({place: 'Hymn'})
   }
@@ -79,6 +97,7 @@ class Hymn extends Component{
       )
   }
 }
+//Styling for the different components
 const styles = StyleSheet.create({
   hym_text:{
    fontSize:18

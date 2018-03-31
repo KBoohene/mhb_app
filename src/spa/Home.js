@@ -14,11 +14,25 @@ class Home extends Component{
     };  
 
   }
+
+  //Hides navigation header
   static navigationOptions = { header: null }
+
+  //Calls the db function that searches for a hymn
   findHymn = () =>{
+    /**
+     * Calls database api to search for a hymn
+     * 
+     * @param {integer} this.state.num 
+     * @param {function} hymnText
+     */
     db.getHymn(this.state.num,(hymnText)=>{
       this.setState({lyrics:hymnText})
       
+      /** 
+       * Passing of variables and navigation 
+       * to the Hymns page.
+      */
       this.props.navigation.navigate('Hymns', {
         hymnNumber: this.state.num,
         hymnText: this.state.lyrics,
@@ -26,6 +40,7 @@ class Home extends Component{
     })
   }
 
+  //Stores the change in text in the search bar
   onChange= (value) => {
     this.setState({ num: value });
   };
@@ -57,6 +72,7 @@ class Home extends Component{
   }
 }
 
+//Styling for the different components
 const styles = StyleSheet.create({
   buttonContainer:{
     justifyContent: 'center',
