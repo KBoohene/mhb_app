@@ -84,8 +84,10 @@ class Hymn extends Component{
             full={true}
             >
             <Card.Header 
-            title={"Hymn Number: "+this.state.foundHymn }
-            style={{borderColor:"#303337"}}
+            title={
+            <Text style={styles.card_title}>
+              Hymn Number: {this.state.foundHymn} </Text>
+            }
             />
             <Card.Body>
               <Text style={styles.hym_text}>
@@ -112,6 +114,10 @@ const styles = StyleSheet.create({
   card_style:{
     backgroundColor:'#303337',
     borderColor:'#303337',
+  },
+  card_title:{
+    fontSize:18,
+    color:"white"
   }
 
 });
