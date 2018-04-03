@@ -16,7 +16,8 @@ class Hymn extends Component{
     this.state = {
       num: '',
       lyrics:'',
-      place:'Hymn'
+      place:'Hymn',
+      foundHymn:''
     };  
 
   }
@@ -36,6 +37,7 @@ class Hymn extends Component{
 
     // Values are assigned to state variables
     this.setState({num:hymn_Number})
+    this.setState({foundHymn:hymn_Number})
     this.setState({lyrics:hymn_lyrics})
 
   }
@@ -44,7 +46,7 @@ class Hymn extends Component{
   findHymn = () =>{
     db.getHymn(this.state.num,(hymnText)=>{
       this.setState({lyrics:hymnText})
-      console.log(this.state.lyrics)
+      this.setState({foundHymn:this.state.num})
     })
   }
 
@@ -77,9 +79,13 @@ class Hymn extends Component{
         </View>
         <ScrollView 
           contentContainerStyle={styles.scroll_container}>
-          <Card>
+          <Card 
+            style={styles.card_style}
+            full={true}
+            >
             <Card.Header 
-            title={"Hymn Number: "+this.state.num }
+            title={"Hymn Number: "+this.state.foundHymn }
+            style={{borderColor:"#303337"}}
             />
             <Card.Body>
               <Text style={styles.hym_text}>
@@ -96,11 +102,18 @@ class Hymn extends Component{
 //Styling for the different components
 const styles = StyleSheet.create({
   hym_text:{
-   fontSize:18
+   fontSize:18,
+   backgroundColor:'#303337',
+   color:"white"
   },
   scroll_container:{
-    flex:1
+    flex:0,
+  },
+  card_style:{
+    backgroundColor:'#303337',
+    borderColor:'#303337',
   }
+
 });
 
 export default Hymn
