@@ -11,9 +11,9 @@ Setup:
 5. Run the application(react-native run-android) in the terminal or cmd window.
 ---
 Important folders:
-* src/api - Contains functions for database queries
-* src/spa - Contains different pages in the application
-* src/images - Contains images used in the application
+* [src/api](https://github.com/KBoohene/mhb_android/tree/master/src/api) - Contains functions for database queries
+* [src/spa](https://github.com/KBoohene/mhb_android/tree/master/src/spa) - Contains different pages in the application
+* [src/images](https://github.com/KBoohene/mhb_android/tree/master/src/images) - Contains images used in the application
 
 Note: This application was not built with the create-react-native application.
 
