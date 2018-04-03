@@ -1,4 +1,4 @@
-# mhb_android
+# mhb_app
 Methodist Hymn Book Application (Android)
 Built with react native
 
