@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, StatusBar, StyleSheet} from 'react-native';
+import { Text, View, StatusBar, Image,
+  StyleSheet} from 'react-native';
 import Button from 'antd-mobile/lib/button';
 import SearchBar from 'react-native-search-box'
 import db from '../api/db_functions'
@@ -50,8 +51,13 @@ class Home extends Component{
     return(
       <View style={styles.screen}>
         <StatusBar hidden={true}/>
-        <View></View>
-        <View>
+        <View style={styles.img_container}>
+          <Image 
+            source={require('../images/Logo-mdpi.png')}
+            style={styles.img_style}
+          />
+        </View>
+        <View style={styles.search_container}>
           <SearchBar 
             onChangeText={this.onChange}
             placeholder="Hymn"
@@ -74,9 +80,24 @@ class Home extends Component{
 
 //Styling for the different components
 const styles = StyleSheet.create({
+  screen: {
+    backgroundColor:"#363B3F",
+    flex:1,
+    flexDirection:'column'
+  }, 
   buttonContainer:{
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop:10
+  },
+  search_container:{
+    marginTop:30
+  },
+  img_container:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex:0.3,
+    marginTop:250
   },
   buttonStyle: {
     borderRadius:15,
@@ -85,10 +106,14 @@ const styles = StyleSheet.create({
     width:200,
     backgroundColor:'#303337'
   },
-  screen: {
-    backgroundColor:"#363B3F",
-    flex:1
-  }
+
+  img_style:{
+    width:700,
+    height:310,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  
 });
 
 
