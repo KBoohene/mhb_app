@@ -67,7 +67,7 @@ class Hymn extends Component{
 
   render(){
     return(
-      <View>
+      <View style={styles.screen}>
         <StatusBar hidden={true}/>
         <View>
           <SearchBar 
@@ -103,6 +103,10 @@ class Hymn extends Component{
 }
 //Styling for the different components
 const styles = StyleSheet.create({
+  screen:{
+    backgroundColor:"#303337", 
+    flex:1,
+  },
   hym_text:{
    fontSize:18,
    backgroundColor:'#303337',
@@ -110,7 +114,7 @@ const styles = StyleSheet.create({
    padding:18
   },
   scroll_container:{
-    flex:0,
+    backgroundColor:'#303337',
   },
   card_style:{
     backgroundColor:'#303337',
