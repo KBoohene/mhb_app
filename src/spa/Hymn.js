@@ -106,7 +106,8 @@ const styles = StyleSheet.create({
   hym_text:{
    fontSize:18,
    backgroundColor:'#303337',
-   color:"white"
+   color:"white",
+   padding:18
   },
   scroll_container:{
     flex:0,
@@ -118,8 +119,10 @@ const styles = StyleSheet.create({
   card_title:{
     fontSize:18,
     color:"white"
+  },
+  card_body:{
+    padding:20
   }
-
 });
 
 export default Hymn
