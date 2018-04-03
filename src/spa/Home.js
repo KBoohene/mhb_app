@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     marginTop:10
   },
   search_container:{
-    marginTop:30
+    marginTop:40
   },
   img_container:{
     justifyContent: 'center',
@@ -110,8 +110,7 @@ const styles = StyleSheet.create({
   img_style:{
     width:700,
     height:310,
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginRight:30
   },
   
 });

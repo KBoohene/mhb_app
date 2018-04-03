@@ -37,19 +37,14 @@ class Hymn extends Component{
     // Values are assigned to state variables
     this.setState({num:hymn_Number})
     this.setState({lyrics:hymn_lyrics})
+
   }
   
   //Calls the db function that searches for a hymn
   findHymn = () =>{
-     /**
-     * Calls database api to search for a hymn
-     * 
-     * @param {integer} this.state.num 
-     * @param {function} hymnText
-     */
     db.getHymn(this.state.num,(hymnText)=>{
       this.setState({lyrics:hymnText})
-      
+      console.log(this.state.lyrics)
     })
   }
 
