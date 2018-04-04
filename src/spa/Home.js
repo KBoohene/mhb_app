@@ -44,6 +44,7 @@ class Home extends Component{
   //Stores the change in text in the search bar
   onChange= (value) => {
     this.setState({ num: value });
+    console.log(this.state.num)
   };
 
 

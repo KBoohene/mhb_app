@@ -1,5 +1,13 @@
+import {Platform} from 'react-native';
 var SQLite = require('react-native-sqlite-storage');
-let db = SQLite.openDatabase({name: 'my.db', createFromLocation:'~mhb.db'})
+let db = ""
+if(Platform.OS ==="ios"){
+  db = SQLite.openDatabase({name : "mhb.db", createFromLocation :'../../www/mhb.db'});
+}
+else{
+  db = SQLite.openDatabase({name: 'my.db', createFromLocation:'~mhb.db'})
+}
+
 
 const functions = {
   /**
