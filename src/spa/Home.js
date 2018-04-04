@@ -54,7 +54,7 @@ class Home extends Component{
         <StatusBar hidden={true}/>
         <View style={styles.img_container}>
           <Image 
-            source={require('../images/Logo-mdpi.png')}
+            source={require('../images/Logo-ldpi.png')}
             style={styles.img_style}
           />
         </View>
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   },
 
   img_style:{
-    width:700,
+    width:600,
     height:310,
     marginRight:30
   },
